@@ -38,6 +38,9 @@ export default function Game() {
     }
   }
 
+  const renderHTML = (rawHTML) =>
+    React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+
   useEffect(() => {
     if (!currPrompt || !nextPrompt) {
       setCurrPrompt(prompts[0]?.content);
@@ -49,13 +52,13 @@ export default function Game() {
     <div className="game">
       <div className="prompts">
         <div className="prompt prompt-1">
-          <p>{currPrompt}</p>
+          <p>{renderHTML(currPrompt)}</p>
           <button onClick={promptTrans} type="button" className="primary-btn">
             Next Prompt
           </button>
         </div>
         <div className="prompt prompt-2">
-          <p>{nextPrompt}</p>
+          <p>{renderHTML(nextPrompt)}</p>
           <button onClick={promptTrans} type="button" className="primary-btn">
             Next Prompt
           </button>

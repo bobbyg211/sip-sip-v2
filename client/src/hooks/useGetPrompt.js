@@ -6,10 +6,12 @@ export default function useGetPrompt() {
   const [offset, setOffset] = useState(0);
   const [data, setData] = useState([]);
 
+  // Update to start at beginning when prompts run out
+
   const action = async (newSeed = false) => {
     try {
       if (!newSeed) {
-        const response = await axios.get(`/database/prompt`, {
+        const response = await axios.get(`/api/prompt`, {
           params: {
             seed: seed,
             offset: offset,

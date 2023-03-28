@@ -22,7 +22,7 @@ app.use(json());
 
 app.use(express.static(resolve(__dirname, "../client/build")));
 
-app.use("/database", databaseRouter);
+app.use("/api", databaseRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(resolve(__dirname + "/../client/build/index.html"));

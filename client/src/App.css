@@ -75,18 +75,18 @@ p {
   font-family: "Mahogany", "sans-serif";
   font-size: 34px;
   border-radius: 15px;
-  color: white;
-  background: black;
+  color: black;
+  background: white;
   border: 2px solid white;
   padding: 20px 30px 15px 30px;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
 }
 
-.primary-btn:hover,
-.primary-btn.active {
-  color: black;
-  background: white;
+.primary-btn:active,
+.primary-btn:focus {
+  background: #aaaaaa;
+  border: 2px solid #aaaaaa;
 }
 
 .secondary-btn {
@@ -95,6 +95,17 @@ p {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+}
+
+.share img {
+  width: 24px;
+  position: relative;
+  top: -1.5px;
 }
 
 .landscape {
@@ -180,10 +191,13 @@ p {
 .home .content {
   position: relative;
   z-index: 4;
+  margin-top: 50px;
+  padding: 0 35px;
 }
 
 .home .title {
-  margin-top: 50px;
+  margin-bottom: 20px;
+  max-width: 570px;
 }
 
 .home p {
@@ -192,7 +206,7 @@ p {
 }
 
 .home .play {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .home .play a {
@@ -202,6 +216,7 @@ p {
 
 .home .share {
   margin-top: 30px;
+  justify-content: center;
 }
 
 .home .landscape .clouds {
@@ -342,5 +357,20 @@ p {
 @media (min-width: 768px) {
   .landscape .city img {
     width: 200%;
+  }
+
+  .primary-btn {
+    color: white;
+    background: black;
+  }
+
+  .primary-btn:hover {
+    color: black;
+    background: white;
+  }
+
+  .primary-btn:active,
+  .primary-btn:focus {
+    color: black;
   }
 }

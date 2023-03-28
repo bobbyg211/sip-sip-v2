@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import useGetPrompt from "../hooks/useGetPrompt";
-import cityscape from "../images/City.svg";
-import cloud from "../images/Cloud.svg";
+import cityscape from "../images/city.svg";
+import cloud from "../images/cloud.svg";
 import sippy from "../images/sippy.svg";
+import share from "../images/share.svg";
 
 export default function Game() {
   const { action: getPrompts, data: prompts } = useGetPrompt();
@@ -28,9 +29,9 @@ export default function Game() {
   async function shareGame() {
     try {
       await navigator.share({
-        title: "MDN",
-        text: "Learn web development on MDN!",
-        url: "https://developer.mozilla.org",
+        title: "SipSip",
+        text: "SipSip: Pour decisions make great stories...",
+        url: "https://playsipsip.com",
       });
     } catch (err) {
       console.log(err);
@@ -49,18 +50,19 @@ export default function Game() {
       <div className="prompts">
         <div className="prompt prompt-1">
           <p>{currPrompt} SipSip!</p>
-          <button onClick={promptTrans} type="button" className="primary-btn active">
+          <button onClick={promptTrans} type="button" className="primary-btn">
             Next Prompt
           </button>
         </div>
         <div className="prompt prompt-2">
           <p>{nextPrompt} SipSip!</p>
-          <button onClick={promptTrans} type="button" className="primary-btn active">
+          <button onClick={promptTrans} type="button" className="primary-btn">
             Next Prompt
           </button>
         </div>
       </div>
       <div className="share">
+        <img src={share} alt="" />
         <button className="secondary-btn" type="button" onClick={shareGame}>
           Share this game
         </button>

@@ -2,16 +2,18 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import lottie from "lottie-web";
 import * as canman from "../animations/canman.json";
-import cityscape from "../images/City.svg";
-import cloud from "../images/Cloud.svg";
+import logo from "../images/logo.svg";
+import cityscape from "../images/city.svg";
+import cloud from "../images/cloud.svg";
+import share from "../images/share.svg";
 
 export default function Home() {
   async function shareGame() {
     try {
       await navigator.share({
-        title: "MDN",
-        text: "Learn web development on MDN!",
-        url: "https://developer.mozilla.org",
+        title: "SipSip",
+        text: "SipSip: Pour decisions make great stories...",
+        url: "https://playsipsip.com",
       });
     } catch (err) {
       console.log(err);
@@ -28,7 +30,7 @@ export default function Home() {
   return (
     <div className="home">
       <div className="content">
-        <h1 className="title">SipSip</h1>
+        <img className="title" src={logo} alt="SipSip" />
         <p>Pour decisions make great stories...</p>
         <div className="play">
           <Link className="primary-btn" to="/game">
@@ -36,6 +38,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="share">
+          <img src={share} alt="" />
           <button className="secondary-btn" type="button" onClick={shareGame}>
             Share this game
           </button>

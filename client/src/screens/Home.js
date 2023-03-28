@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import lottie from "lottie-web";
 import * as canman from "../animations/canman.json";
 import logo from "../images/logo.svg";
-import cityscape from "../images/city.svg";
-import cloud from "../images/cloud.svg";
+import cityscape from "../images/City.svg";
+import cloud from "../images/Cloud.svg";
 import share from "../images/share.svg";
 
 export default function Home() {

@@ -6,6 +6,18 @@ import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
 
 export default function Home() {
+  async function shareGame() {
+    try {
+      await navigator.share({
+        title: "MDN",
+        text: "Learn web development on MDN!",
+        url: "https://developer.mozilla.org",
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector("#sippy"),
@@ -15,15 +27,19 @@ export default function Home() {
 
   return (
     <div className="home">
-      <h1 className="title">SipSip</h1>
-      <p>Pour decisions make for great stories...</p>
-      <div className="play">
-        <Link to="/game">
-          <button type="button">Play the game</button>
-        </Link>
-      </div>
-      <div class="share">
-        <p>Share this game</p>
+      <div className="content">
+        <h1 className="title">SipSip</h1>
+        <p>Pour decisions make great stories...</p>
+        <div className="play">
+          <Link className="primary-btn" to="/game">
+            Play the game
+          </Link>
+        </div>
+        <div className="share">
+          <button className="secondary-btn" type="button" onClick={shareGame}>
+            Share this game
+          </button>
+        </div>
       </div>
       <div className="landscape">
         <div className="clouds">

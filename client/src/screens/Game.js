@@ -25,6 +25,18 @@ export default function Game() {
     });
   }
 
+  async function shareGame() {
+    try {
+      await navigator.share({
+        title: "MDN",
+        text: "Learn web development on MDN!",
+        url: "https://developer.mozilla.org",
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
     if (!currPrompt || !nextPrompt) {
       setCurrPrompt(prompts[0]?.content);
@@ -37,16 +49,21 @@ export default function Game() {
       <div className="prompts">
         <div className="prompt prompt-1">
           <p>{currPrompt} SipSip!</p>
-          <button onClick={promptTrans} type="button" className="active">
+          <button onClick={promptTrans} type="button" className="primary-btn active">
             Next Prompt
           </button>
         </div>
         <div className="prompt prompt-2">
           <p>{nextPrompt} SipSip!</p>
-          <button onClick={promptTrans} type="button" className="active">
+          <button onClick={promptTrans} type="button" className="primary-btn active">
             Next Prompt
           </button>
         </div>
+      </div>
+      <div className="share">
+        <button className="secondary-btn" type="button" onClick={shareGame}>
+          Share this game
+        </button>
       </div>
       <div className="landscape">
         <div className="clouds">

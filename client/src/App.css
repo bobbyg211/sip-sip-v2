@@ -62,7 +62,8 @@ h6 {
 h1 {
   color: #ffd972;
   font-size: 140px;
-  -webkit-text-stroke: 1px #a04d21; /* width and color */
+  -webkit-text-stroke: 1px #a04d21;
+  /* text-shadow: -3px 0 #a04d21, 0 3px #a04d21, 3px 0 #a04d21, 0 -px #a04d21; */
   margin: 0;
 }
 
@@ -70,7 +71,7 @@ p {
   margin: 0 0 20px 0;
 }
 
-button {
+.primary-btn {
   font-family: "Mahogany", "sans-serif";
   font-size: 34px;
   border-radius: 15px;
@@ -82,10 +83,18 @@ button {
   transition: all 0.5s ease;
 }
 
-button:hover,
-button.active {
+.primary-btn:hover,
+.primary-btn.active {
   color: black;
   background: white;
+}
+
+.secondary-btn {
+  color: white;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .landscape {
@@ -168,8 +177,13 @@ button.active {
   text-align: center;
 }
 
+.home .content {
+  position: relative;
+  z-index: 4;
+}
+
 .home .title {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .home p {
@@ -181,12 +195,13 @@ button.active {
   margin-top: 20px;
 }
 
-.home .share {
-  margin-top: 30px;
+.home .play a {
+  display: inline-block;
+  text-decoration: none;
 }
 
-.home .share p {
-  font-size: 16px;
+.home .share {
+  margin-top: 30px;
 }
 
 .home .landscape .clouds {
@@ -275,6 +290,13 @@ button.active {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 40px;
+}
+
+.game .share {
+  position: relative;
+  z-index: 4;
+  text-align: left;
+  margin-left: 35px;
 }
 
 .game .landscape .clouds {

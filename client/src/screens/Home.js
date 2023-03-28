@@ -6,6 +6,8 @@ import logo from "../images/logo.svg";
 import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
 import share from "../images/share.svg";
+import sippyLg from "../images/sippy-lg.svg";
+import cheesyLg from "../images/cheesy-lg.svg";
 
 export default function Home() {
   async function shareGame() {
@@ -58,6 +60,8 @@ export default function Home() {
         </div>
         <div className="ground"></div>
         <div id="sippy"></div>
+        <img className="sippy-lg" src={sippyLg} alt="" />
+        <img className="cheesy-lg" src={cheesyLg} alt="" />
       </div>
     </div>
   );

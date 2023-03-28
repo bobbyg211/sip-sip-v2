@@ -4,6 +4,8 @@ import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
 import sippy from "../images/sippy.svg";
 import share from "../images/share.svg";
+import sippyLg from "../images/sippy-lg.svg";
+import cheesyLg from "../images/cheesy-lg.svg";
 
 export default function Game() {
   const { action: getPrompts, data: prompts } = useGetPrompt();
@@ -84,6 +86,8 @@ export default function Game() {
         </div>
         <div className="ground"></div>
         <img src={sippy} alt="Sippy" id="sippy" />
+        <img className="sippy-lg" src={sippyLg} alt="" />
+        <img className="cheesy-lg" src={cheesyLg} alt="" />
       </div>
     </div>
   );

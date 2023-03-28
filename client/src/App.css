@@ -227,14 +227,6 @@ p {
   animation: slide-city 50s linear infinite;
 }
 
-.home .landscape .ground::after {
-  width: 165px;
-  height: 30px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .home #sippy {
   width: 160px;
   margin: 0 auto;
@@ -277,30 +269,6 @@ p {
   transition: all 0.5s ease;
 }
 
-.game .prompts::before {
-  content: "";
-  display: block;
-  width: 27px;
-  height: 15px;
-  border: 2px solid white;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -30px;
-  right: 30%;
-}
-
-.game .prompts::after {
-  content: "";
-  display: block;
-  width: 17px;
-  height: 9px;
-  border: 2px solid white;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -45px;
-  right: 23%;
-}
-
 .game .prompts p {
   font-size: 24px;
   font-weight: 500;
@@ -324,13 +292,6 @@ p {
   top: -100px;
 }
 
-.game .landscape .ground::after {
-  width: 95px;
-  height: 20px;
-  right: 20px;
-  top: 50%;
-}
-
 .game #sippy {
   width: 85px;
   margin: 0 auto;
@@ -350,6 +311,50 @@ p {
 }
 
 @media (max-width: 768px) {
+  .sippy-lg,
+  .cheesy-lg {
+    display: none;
+  }
+
+  .home .landscape .ground::after {
+    width: 165px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .game .landscape .ground::after {
+    width: 95px;
+    height: 20px;
+    right: 20px;
+    top: 50%;
+  }
+
+  .game .prompts::before {
+    content: "";
+    display: block;
+    width: 27px;
+    height: 15px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30px;
+    right: 30%;
+  }
+
+  .game .prompts::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 9px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -45px;
+    right: 23%;
+  }
+
   @keyframes slide-city {
     0% {
       transform: translate3d(0, 0, 0);
@@ -361,8 +366,28 @@ p {
 }
 
 @media (min-width: 768px) {
+  .landscape .clouds {
+    top: -165% !important;
+  }
+
+  .landscape .clouds .c-wrap {
+    animation: slide-clouds 35s linear infinite;
+    height: 300px;
+  }
+
+  .landscape .clouds .cloud {
+    width: 200px;
+  }
+
   .landscape .city img {
     width: 200%;
+  }
+
+  .landscape .ground::after {
+    width: 222px !important;
+    height: 44px !important;
+    left: 44px !important;
+    bottom: 8px !important;
   }
 
   .primary-btn {
@@ -377,5 +402,48 @@ p {
 
   .primary-btn:active {
     color: black;
+  }
+
+  #sippy {
+    display: none;
+  }
+
+  .sippy-lg {
+    position: absolute;
+    z-index: 3;
+    left: 30px;
+    bottom: 25px;
+  }
+
+  .cheesy-lg {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: -100px;
+  }
+
+  .home p {
+    font-size: 24px;
+  }
+
+  .game .prompts {
+    width: 35%;
+    left: calc(50% - 35px);
+    transform: translateX(-50%);
+    margin-top: 80px;
+  }
+
+  .game .prompts .prompt {
+    margin-right: 100%;
+  }
+
+  .game .prompts .prompt.next {
+    transform: translateX(calc(-200%));
+  }
+
+  .game .share {
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
   }
 }

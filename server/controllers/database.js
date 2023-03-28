@@ -3,11 +3,11 @@ import pool from "../sql/connection.js";
 const getPrompt = async (req, res) => {
   const { seed, offset } = req.query;
 
-  const sql = `SELECT * FROM sipsip.prompts ORDER BY RAND(${seed}) LIMIT ${offset},1;`;
+  const sql = `SELECT * FROM sipsip.prompts ORDER BY RAND(${seed}) LIMIT ${offset},2;`;
 
   try {
     const results = await sqlQueryProm(sql);
-    return res.json(results[0]);
+    return res.json(results);
   } catch (err) {
     console.log(err);
   }

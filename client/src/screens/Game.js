@@ -1,26 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useGetPrompt from "../hooks/useGetPrompt";
 import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
 import sippy from "../images/sippy.svg";
 
 export default function Game() {
-  const { action: getPrompt, data: prompt } = useGetPrompt();
+  const { action: getPrompts, data: prompts } = useGetPrompt();
+  const [currPrompt, setCurrPrompt] = useState();
+  const [nextPrompt, setNextPrompt] = useState();
 
-  function nextPrompt() {
-    getPrompt();
-    document.querySelector(".game .prompt .bg-area").classList.add("next");
-    setTimeout(() => {
-      document.querySelector(".game .prompt .bg-area").classList.remove("next");
-    }, 750);
+  function promptTrans() {
+    document.querySelector(".game .prompts .prompt-1").classList.add("next");
+    document.querySelector(".game .prompts .prompt-2").classList.add("next");
+    getPrompts().then((newPrompts) => {
+      setTimeout(() => {
+        setCurrPrompt(nextPrompt);
+      }, 500);
+
+      setTimeout(() => {
+        document.querySelector(".game .prompts .prompt-1").classList.remove("next");
+        document.querySelector(".game .prompts .prompt-2").classList.remove("next");
+        setNextPrompt(newPrompts[1]?.content);
+      }, 750);
+    });
   }
+
+  useEffect(() => {
+    if (!currPrompt || !nextPrompt) {
+      setCurrPrompt(prompts[0]?.content);
+      setNextPrompt(prompts[1]?.content);
+    }
+  }, [prompts]);
 
   return (
     <div className="game">
-      <div className="prompt">
-        <div className="bg-area">
-          <p>{prompt?.content} SipSip!</p>
-          <button onClick={nextPrompt} type="button" className="active">
+      <div className="prompts">
+        <div className="prompt prompt-1">
+          <p>{currPrompt} SipSip!</p>
+          <button onClick={promptTrans} type="button" className="active">
+            Next Prompt
+          </button>
+        </div>
+        <div className="prompt prompt-2">
+          <p>{nextPrompt} SipSip!</p>
+          <button onClick={promptTrans} type="button" className="active">
             Next Prompt
           </button>
         </div>

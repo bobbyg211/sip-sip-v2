@@ -1,10 +1,14 @@
 import React from "react";
+import useGetPrompt from "../hooks/useGetPrompt";
 import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
 import sippy from "../images/sippy.svg";
 
 export default function Game() {
+  const { action: getPrompt, data: prompt } = useGetPrompt();
+
   function nextPrompt() {
+    getPrompt();
     document.querySelector(".game .prompt .bg-area").classList.add("next");
     setTimeout(() => {
       document.querySelector(".game .prompt .bg-area").classList.remove("next");
@@ -15,10 +19,7 @@ export default function Game() {
     <div className="game">
       <div className="prompt">
         <div className="bg-area">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum molestie justo, et
-            tempus ante rutrum eget...SipSip!
-          </p>
+          <p>{prompt?.content} SipSip!</p>
           <button onClick={nextPrompt} type="button" className="active">
             Next Prompt
           </button>

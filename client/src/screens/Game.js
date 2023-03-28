@@ -54,13 +54,13 @@ export default function Game() {
         <div className="prompt prompt-1">
           <p>{renderHTML(currPrompt)}</p>
           <button onClick={promptTrans} type="button" className="primary-btn">
-            Next Prompt
+            Next
           </button>
         </div>
         <div className="prompt prompt-2">
           <p>{renderHTML(nextPrompt)}</p>
           <button onClick={promptTrans} type="button" className="primary-btn">
-            Next Prompt
+            Next
           </button>
         </div>
       </div>

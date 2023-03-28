@@ -83,8 +83,7 @@ p {
   transition: all 0.2s ease;
 }
 
-.primary-btn:active,
-.primary-btn:focus {
+.primary-btn:active {
   background: #aaaaaa;
   border: 2px solid #aaaaaa;
 }
@@ -369,8 +368,7 @@ p {
     background: white;
   }
 
-  .primary-btn:active,
-  .primary-btn:focus {
+  .primary-btn:active {
     color: black;
   }
 }

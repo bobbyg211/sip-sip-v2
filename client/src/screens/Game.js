@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import useGetPrompt from "../hooks/useGetPrompt";
-import cityscape from "../images/City.svg";
-import cloud from "../images/Cloud.svg";
 import sippy from "../images/sippy.svg";
 import share from "../images/share.svg";
 import sippyLg from "../images/sippy-lg.svg";

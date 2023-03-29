@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import lottie from "lottie-web";
 import * as canman from "../animations/canman.json";
 import logo from "../images/logo.svg";

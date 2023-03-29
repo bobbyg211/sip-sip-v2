@@ -108,17 +108,9 @@ p {
   transition: all 1s ease;
 }
 
-.global .wrapper.disc {
-  top: 100%;
-}
-
 .global .wrapper .landscape {
   bottom: 0%;
   transition: all 1s ease;
-}
-
-.global .wrapper.disc .landscape {
-  bottom: -100%;
 }
 
 .global .wrapper .home {
@@ -153,7 +145,7 @@ p {
   left: 0;
 }
 
-.clouds {
+.landscape .clouds {
   position: absolute;
   top: 0;
   left: 0;
@@ -162,12 +154,12 @@ p {
   overflow: hidden;
 }
 
-.clouds .c-wrap {
+.landscape .clouds .c-wrap {
   animation: slide-clouds 15s linear infinite;
   height: 200px;
 }
 
-.clouds .cloud {
+.landscape .clouds .cloud {
   position: absolute;
   width: 100px;
 }
@@ -305,70 +297,55 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: black;
-  padding: 45px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 35px;
   transition: all 1s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.disclaimer.active {
+  opacity: 1;
+  pointer-events: initial;
 }
 
 .disclaimer .content {
   position: relative;
   z-index: 3;
+  background: white;
+  border-radius: 34px;
+  padding: 50px 40px;
+  max-width: 400px;
 }
 
-.disclaimer.inactive {
-  top: -100%;
+.disclaimer .content > * {
+  color: black;
 }
 
 .disclaimer small {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 15px;
+  display: block;
 }
 
 .disclaimer p {
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 600;
   margin-bottom: 40px;
 }
 
-.disclaimer .clouds,
-.disclaimer .c-wrap {
-  height: 100%;
+.disclaimer .content .primary-btn {
+  border-color: black;
+  background: white;
 }
 
-.disclaimer .clouds .cloud-1 {
-  top: 10%;
-  left: 0;
-  transform: translateX(-50%);
-}
-
-.disclaimer .clouds .cloud-2 {
-  top: 20%;
-  right: 0;
-  transform: translateX(50%);
-}
-
-.disclaimer .clouds .cloud-3 {
-  bottom: 15%;
-  left: 5%;
-  transform: translateX(50%);
-}
-
-.disclaimer .clouds .cloud-4 {
-  top: 10%;
-  right: -100%;
-  transform: translateX(50%);
-}
-
-.disclaimer .clouds .cloud-5 {
-  top: 20%;
-  right: -200%;
-  transform: translateX(50%);
-}
-
-.disclaimer .clouds .cloud-6 {
-  bottom: 15%;
-  right: -130%;
-  transform: translateX(50%);
+@media (min-width: 768px) {
+  .disclaimer .content .primary-btn:hover {
+    color: white;
+    background: black;
+  }
 }
 
 /* =============================== */

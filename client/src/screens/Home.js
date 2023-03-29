@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import lottie from "lottie-web";
 import * as canman from "../animations/canman.json";
 import logo from "../images/logo.svg";
-import cityscape from "../images/City.svg";
-import cloud from "../images/Cloud.svg";
 import share from "../images/share.svg";
 import sippyLg from "../images/sippy-lg.svg";
 import cheesyLg from "../images/cheesy-lg.svg";
 
-export default function Home() {
+export default function Home({ setActive }) {
   async function shareGame() {
     try {
       await navigator.share({
@@ -20,6 +18,10 @@ export default function Home() {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  function startGame() {
+    setActive(true);
   }
 
   useEffect(() => {
@@ -35,9 +37,9 @@ export default function Home() {
         <img className="title" src={logo} alt="SipSip" />
         <p>Pour decisions make great stories...</p>
         <div className="play">
-          <Link className="primary-btn" to="/game">
+          <button onClick={startGame} type="button" className="primary-btn">
             Play the game
-          </Link>
+          </button>
         </div>
         <div className="share">
           <img src={share} alt="" />
@@ -46,19 +48,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="landscape">
-        <div className="clouds">
-          <div className="c-wrap">
-            <img className="cloud cloud-1" src={cloud} alt="" />
-            <img className="cloud cloud-2" src={cloud} alt="" />
-            <img className="cloud cloud-3" src={cloud} alt="" />
-            <img className="cloud cloud-4" src={cloud} alt="" />
-          </div>
-        </div>
-        <div className="city">
-          <img src={cityscape} alt="" />
-        </div>
-        <div className="ground"></div>
+      <div className="characters">
         <div id="sippy"></div>
         <img className="sippy-lg" src={sippyLg} alt="" />
         <img className="cheesy-lg" src={cheesyLg} alt="" />

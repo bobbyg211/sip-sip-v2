@@ -1,4 +1,4 @@
-/* Webfont: MahoganyRegular */
+/* FONTS */
 
 @font-face {
   font-family: "Mahogany";
@@ -11,8 +11,6 @@
   text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Satoshi-Variable */
-
 @font-face {
   font-family: "Satoshi";
   src: url("./fonts/satoshi/Satoshi-Variable.woff2") format("woff2"),
@@ -22,6 +20,8 @@
   font-display: swap;
   font-style: normal;
 }
+
+/* GENERAL */
 
 :root {
   --doc-height: 100%;
@@ -43,11 +43,12 @@ body,
 html,
 #root,
 #main,
+.global,
+.disclaimer,
 .home,
 .game {
   height: 100vh; /* fallback for Js load */
   height: var(--doc-height);
-  overflow: hidden;
 }
 
 h1,
@@ -70,6 +71,8 @@ h1 {
 p {
   margin: 0 0 20px 0;
 }
+
+/* BUTTONS */
 
 .primary-btn {
   font-family: "Mahogany", "sans-serif";
@@ -97,23 +100,60 @@ p {
   cursor: pointer;
 }
 
-.share {
-  display: flex;
-  align-items: center;
+/* LAYOUT */
+
+.global .wrapper {
+  position: relative;
+  top: 0%;
+  transition: all 1s ease;
 }
 
-.share img {
-  width: 24px;
-  position: relative;
-  top: -1.5px;
+.global .wrapper.disc {
+  top: 100%;
 }
+
+.global .wrapper .landscape {
+  bottom: 0%;
+  transition: all 1s ease;
+}
+
+.global .wrapper.disc .landscape {
+  bottom: -100%;
+}
+
+.global .wrapper .home {
+  position: fixed;
+  width: 100%;
+  left: 0%;
+  z-index: 999;
+  transition: all 1s ease;
+}
+
+.global .wrapper .game {
+  position: fixed;
+  width: 100%;
+  left: 100%;
+  z-index: 999;
+  transition: all 1s ease;
+}
+
+.global .wrapper.active .home {
+  left: -100%;
+}
+
+.global .wrapper.active .game {
+  left: 0%;
+}
+
+/* LANDSCAPE */
 
 .landscape {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
 }
 
-.landscape .clouds {
+.clouds {
   position: absolute;
   top: 0;
   left: 0;
@@ -122,12 +162,12 @@ p {
   overflow: hidden;
 }
 
-.landscape .clouds .c-wrap {
+.clouds .c-wrap {
   animation: slide-clouds 15s linear infinite;
   height: 200px;
 }
 
-.landscape .clouds .cloud {
+.clouds .cloud {
   position: absolute;
   width: 100px;
 }
@@ -156,6 +196,12 @@ p {
   transform: translateX(50%);
 }
 
+.landscape .clouds .cloud-5 {
+  top: 0;
+  right: -300%;
+  transform: translateX(50%);
+}
+
 .landscape .city {
   margin-bottom: -10px;
   width: 100%;
@@ -167,18 +213,175 @@ p {
 }
 
 .landscape .ground {
-  width: 100%;
+  width: 200%;
   height: 60px;
   background-color: #454545;
   position: relative;
 }
 
-.landscape .ground::after {
+.landscape .clouds {
+  top: -100px;
+}
+
+.landscape .city img {
+  position: relative;
+  left: 0%;
+  animation: slide-city 50s linear infinite;
+  transition: all 1s ease;
+}
+
+.active .landscape .city img {
+  animation-play-state: paused;
+  left: -50%;
+}
+
+.home #sippy::after,
+.game .characters::after {
   content: "";
   background-color: #000000;
   display: block;
   position: absolute;
   border-radius: 50%;
+}
+
+.home #sippy svg {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .home #sippy::after {
+    width: 165px;
+    height: 30px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .game .characters::after {
+    width: 95px;
+    height: 20px;
+    right: 20px;
+    bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .landscape .clouds {
+    top: -165% !important;
+  }
+
+  .landscape .clouds .c-wrap {
+    animation: slide-clouds 35s linear infinite;
+    height: 300px;
+  }
+
+  .landscape .clouds .cloud {
+    width: 200px;
+  }
+
+  .landscape .city img {
+    width: 200%;
+  }
+
+  .landscape .ground::after {
+    width: 222px !important;
+    height: 44px !important;
+    left: 44px !important;
+    bottom: 8px !important;
+  }
+}
+
+/* DISCLAIMER */
+
+.disclaimer {
+  position: fixed;
+  z-index: 9999;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: black;
+  padding: 45px;
+  transition: all 1s ease;
+}
+
+.disclaimer .content {
+  position: relative;
+  z-index: 3;
+}
+
+.disclaimer.inactive {
+  top: -100%;
+}
+
+.disclaimer small {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.disclaimer p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.disclaimer .clouds,
+.disclaimer .c-wrap {
+  height: 100%;
+}
+
+.disclaimer .clouds .cloud-1 {
+  top: 10%;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.disclaimer .clouds .cloud-2 {
+  top: 20%;
+  right: 0;
+  transform: translateX(50%);
+}
+
+.disclaimer .clouds .cloud-3 {
+  bottom: 15%;
+  left: 5%;
+  transform: translateX(50%);
+}
+
+.disclaimer .clouds .cloud-4 {
+  top: 10%;
+  right: -100%;
+  transform: translateX(50%);
+}
+
+.disclaimer .clouds .cloud-5 {
+  top: 20%;
+  right: -200%;
+  transform: translateX(50%);
+}
+
+.disclaimer .clouds .cloud-6 {
+  bottom: 15%;
+  right: -130%;
+  transform: translateX(50%);
+}
+
+/* =============================== */
+
+.share {
+  display: flex;
+  align-items: center;
+}
+
+.share img {
+  width: 24px;
+  position: relative;
+  top: -1.5px;
 }
 
 .home,
@@ -217,14 +420,6 @@ p {
 .home .share {
   margin-top: 30px;
   justify-content: center;
-}
-
-.home .landscape .clouds {
-  top: -75px;
-}
-
-.home .landscape .city img {
-  animation: slide-city 50s linear infinite;
 }
 
 .home #sippy {
@@ -288,10 +483,6 @@ p {
   margin-left: 35px;
 }
 
-.game .landscape .clouds {
-  top: -100px;
-}
-
 .game #sippy {
   width: 85px;
   margin: 0 auto;
@@ -314,21 +505,6 @@ p {
   .sippy-lg,
   .cheesy-lg {
     display: none;
-  }
-
-  .home .landscape .ground::after {
-    width: 165px;
-    height: 30px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .game .landscape .ground::after {
-    width: 95px;
-    height: 20px;
-    right: 20px;
-    top: 50%;
   }
 
   .game .prompts::before {
@@ -366,30 +542,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  .landscape .clouds {
-    top: -165% !important;
-  }
-
-  .landscape .clouds .c-wrap {
-    animation: slide-clouds 35s linear infinite;
-    height: 300px;
-  }
-
-  .landscape .clouds .cloud {
-    width: 200px;
-  }
-
-  .landscape .city img {
-    width: 200%;
-  }
-
-  .landscape .ground::after {
-    width: 222px !important;
-    height: 44px !important;
-    left: 44px !important;
-    bottom: 8px !important;
-  }
-
   .primary-btn {
     color: white;
     background: black;

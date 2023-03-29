@@ -1,14 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router";
-import Home from "./screens/Home";
-import Game from "./screens/Game";
+import Global from "./screens/Global";
 
 const Router = () => {
   return (
     <div id="main">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
+        <Route path="/" element={<Global />} />
       </Routes>
     </div>
   );

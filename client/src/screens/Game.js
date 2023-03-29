@@ -41,7 +41,7 @@ export default function Game() {
   }
 
   const renderHTML = (rawHTML) =>
-    React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    React.createElement("p", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
   useEffect(() => {
     if (!currPrompt || !nextPrompt) {
@@ -54,13 +54,13 @@ export default function Game() {
     <div className="game">
       <div className="prompts">
         <div className="prompt prompt-1">
-          <p>{renderHTML(currPrompt)}</p>
+          {renderHTML(currPrompt)}
           <button onClick={promptTrans} type="button" className="primary-btn">
             Next
           </button>
         </div>
         <div className="prompt prompt-2">
-          <p>{renderHTML(nextPrompt)}</p>
+          {renderHTML(nextPrompt)}
           <button onClick={promptTrans} type="button" className="primary-btn">
             Next
           </button>
@@ -72,19 +72,7 @@ export default function Game() {
           Share this game
         </button>
       </div>
-      <div className="landscape">
-        <div className="clouds">
-          <div className="c-wrap">
-            <img className="cloud cloud-1" src={cloud} alt="" />
-            <img className="cloud cloud-2" src={cloud} alt="" />
-            <img className="cloud cloud-3" src={cloud} alt="" />
-            <img className="cloud cloud-4" src={cloud} alt="" />
-          </div>
-        </div>
-        <div className="city">
-          <img src={cityscape} alt="" />
-        </div>
-        <div className="ground"></div>
+      <div className="characters">
         <img src={sippy} alt="Sippy" id="sippy" />
         <img className="sippy-lg" src={sippyLg} alt="" />
         <img className="cheesy-lg" src={cheesyLg} alt="" />

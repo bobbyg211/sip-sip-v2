@@ -373,15 +373,17 @@ p {
 
 /* =============================== */
 
-.share {
+.share button {
   display: flex;
   align-items: center;
+  margin: 0 auto;
 }
 
-.share img {
+.share button img {
   width: 24px;
   position: relative;
   top: -1.5px;
+  margin-right: 8px;
 }
 
 .home,
@@ -479,8 +481,11 @@ p {
 .game .share {
   position: relative;
   z-index: 4;
-  text-align: left;
   margin-left: 35px;
+}
+
+.game .share button {
+  margin: 0;
 }
 
 .game #sippy {

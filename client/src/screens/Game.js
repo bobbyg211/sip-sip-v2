@@ -67,8 +67,8 @@ export default function Game() {
         </div>
       </div>
       <div className="share">
-        <img src={share} alt="" />
         <button className="secondary-btn" type="button" onClick={shareGame}>
+          <img src={share} alt="" />
           Share this game
         </button>
       </div>

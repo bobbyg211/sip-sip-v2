@@ -35,7 +35,7 @@ export default function Home() {
         <img className="title" src={logo} alt="SipSip" />
         <p>Pour decisions make great stories...</p>
         <div className="play">
-          <Link className="primary-btn" to="/game">
+          <Link className="primary-btn" to="/sip-sip-v2/game">
             Play the game
           </Link>
         </div>

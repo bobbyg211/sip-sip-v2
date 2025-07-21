@@ -6,8 +6,8 @@ const Router = () => {
   return (
     <div id="main">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
+        <Route path="/sip-sip-v2" element={<Home />} />
+        <Route path="/sip-sip-v2/game" element={<Game />} />
       </Routes>
     </div>
   );

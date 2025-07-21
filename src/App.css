@@ -545,8 +545,12 @@ p {
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
   padding: 35px;
-  transition: all 1s ease;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.disclaimer.fade-out {
+  opacity: 0;
 }
 
 .disclaimer .content {

@@ -1,18 +1,11 @@
-import { useEffect } from "react";
-
 export default function Disclaimer() {
   function agreeToPlay() {
-    document.querySelector(".disclaimer").classList.remove("active");
+    const disclaimer = document.querySelector(".disclaimer");
+    disclaimer.classList.add("fade-out");
     setTimeout(() => {
-      document.querySelector(".disclaimer").style.display = "none";
+      disclaimer.style.display = "none";
     }, 500);
   }
-
-  useEffect(() => {
-    setTimeout(() => {
-      document.querySelector(".disclaimer").classList.add("active");
-    }, 250);
-  }, []);
 
   return (
     <div className="disclaimer">

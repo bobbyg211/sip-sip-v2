@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
 import sippy from "../images/sippy.svg";
@@ -21,14 +21,25 @@ function seededShuffle(array, seed) {
   return arr;
 }
 
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
 export default function Game() {
   const [currPrompt, setCurrPrompt] = useState();
   const [nextPrompt, setNextPrompt] = useState();
-  const [remainingPrompts, setRemainingPrompts] = useState([]);
+  const [_, setRemainingPrompts] = useState([]);
 
   useEffect(() => {
-    const seed = Date.now(); // Use current timestamp for a new seed every reload
-    const shuffled = seededShuffle(prompts, seed);
+    const seed = Date.now();
+    const hideNSFW = getCookie("hideAdult") === "true";
+    let promptList = prompts;
+    if (hideNSFW) {
+      promptList = prompts.filter((p) => !p.nsfw);
+    }
+    const shuffled = seededShuffle(promptList, seed);
     setRemainingPrompts(shuffled);
     setCurrPrompt(shuffled[0]);
     setNextPrompt(shuffled[1]);
@@ -50,7 +61,12 @@ export default function Game() {
         if (newArr.length === 0) {
           // All prompts used, reshuffle
           const seed = Date.now();
-          newArr = seededShuffle(prompts, seed);
+          const hideNSFW = getCookie("hideAdult") === "true";
+          let promptList = prompts;
+          if (hideNSFW) {
+            promptList = prompts.filter((p) => !p.nsfw);
+          }
+          newArr = seededShuffle(promptList, seed);
         }
         setNextPrompt(newArr[0]);
         return newArr;
@@ -74,13 +90,13 @@ export default function Game() {
     <div className="game">
       <div className="prompts">
         <div className="prompt prompt-1">
-          <p>{currPrompt}</p>
+          <p>{currPrompt ? currPrompt.text : ""}</p>
           <button onClick={promptTrans} type="button" className="primary-btn">
             Next
           </button>
         </div>
         <div className="prompt prompt-2">
-          <p>{nextPrompt}</p>
+          <p>{nextPrompt ? nextPrompt.text : ""}</p>
           <button onClick={promptTrans} type="button" className="primary-btn">
             Next
           </button>

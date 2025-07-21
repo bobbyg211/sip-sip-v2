@@ -1,12 +1,6 @@
-import React, { useEffect } from "react";
 import { Link } from "react-router";
-import lottie from "lottie-web";
-import canman from "../animations/canman.json";
 import logo from "../images/logo.svg";
-
 import share from "../images/share.svg";
-import sippyLg from "../images/sippy-lg.svg";
-import cheesyLg from "../images/cheesy-lg.svg";
 
 export default function Home() {
   async function shareGame() {
@@ -20,13 +14,6 @@ export default function Home() {
       console.log(err);
     }
   }
-
-  useEffect(() => {
-    lottie.loadAnimation({
-      container: document.querySelector("#sippy"),
-      animationData: canman,
-    });
-  }, []);
 
   return (
     <div className="home">
@@ -44,11 +31,6 @@ export default function Home() {
             Share this game
           </button>
         </div>
-      </div>
-      <div className="characters">
-        <div id="sippy"></div>
-        <img className="sippy-lg" src={sippyLg} alt="" />
-        <img className="cheesy-lg" src={cheesyLg} alt="" />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
+import { useLocation } from "react-router";
 import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
-import { useLocation } from "react-router";
 
 export default function Landscape() {
   const location = useLocation();

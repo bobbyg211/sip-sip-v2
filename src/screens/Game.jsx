@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
-import cityscape from "../images/City.svg";
-import cloud from "../images/Cloud.svg";
-import sippy from "../images/sippy.svg";
 import share from "../images/share.svg";
-import sippyLg from "../images/sippy-lg.svg";
-import cheesyLg from "../images/cheesy-lg.svg";
 import prompts from "../data/prompts.json";
 
 function seededRandom(seed) {
@@ -107,23 +102,6 @@ export default function Game() {
         <button className="secondary-btn" type="button" onClick={shareGame}>
           Share this game
         </button>
-      </div>
-      <div className="landscape">
-        <div className="clouds">
-          <div className="c-wrap">
-            <img className="cloud cloud-1" src={cloud} alt="" />
-            <img className="cloud cloud-2" src={cloud} alt="" />
-            <img className="cloud cloud-3" src={cloud} alt="" />
-            <img className="cloud cloud-4" src={cloud} alt="" />
-          </div>
-        </div>
-        <div className="city">
-          <img src={cityscape} alt="" />
-        </div>
-        <div className="ground"></div>
-        <img src={sippy} alt="Sippy" id="sippy" />
-        <img className="sippy-lg" src={sippyLg} alt="" />
-        <img className="cheesy-lg" src={cheesyLg} alt="" />
       </div>
     </div>
   );

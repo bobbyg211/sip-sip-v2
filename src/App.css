@@ -1,5 +1,6 @@
-/* Webfont: MahoganyRegular */
+/* ===================== GENERAL ===================== */
 
+/* Webfont: MahoganyRegular */
 @font-face {
   font-family: "Mahogany";
   src: url("./fonts/mahogany/Mahogany.woff") format("woff"),
@@ -12,7 +13,6 @@
 }
 
 /* Webfont: Satoshi-Variable */
-
 @font-face {
   font-family: "Satoshi";
   src: url("./fonts/satoshi/Satoshi-Variable.woff2") format("woff2"),
@@ -115,6 +115,308 @@ p {
   top: -1.5px;
 }
 
+@media (min-width: 768px) {
+  .primary-btn {
+    color: white;
+    background: black;
+  }
+  .primary-btn:hover {
+    color: black;
+    background: white;
+  }
+  .primary-btn:active {
+    color: black;
+  }
+}
+
+/* ===================== HOME ===================== */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.home .content {
+  position: relative;
+  z-index: 4;
+  margin-top: 50px;
+  padding: 0 35px;
+}
+
+.home .title {
+  margin-bottom: 20px;
+  max-width: 570px;
+}
+
+.home p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.home .play {
+  margin-top: 30px;
+}
+
+.home .play a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home .share {
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.home .landscape .clouds {
+  top: -75px;
+}
+
+.home .landscape .city img {
+  animation: slide-city 50s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .home p {
+    font-size: 24px;
+  }
+}
+
+/* ===================== GAME ===================== */
+
+.game {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.game .prompts {
+  position: relative;
+  z-index: 4;
+  margin: 40px 35px;
+  height: 70%;
+  display: flex;
+}
+
+.game .prompts .prompt {
+  flex: 1 0 100%;
+  border: 2px solid white;
+  border-radius: 34px;
+  padding: 20px;
+  margin-right: 35px;
+  height: 95%;
+  margin-top: auto;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(0%);
+}
+
+.game .prompts .prompt.next {
+  transform: translateX(calc(-100% - 35px));
+  transition: all 0.5s ease;
+}
+
+.game .prompts p {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: auto;
+}
+
+.game .prompts .prompt button {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.game .share {
+  position: relative;
+  z-index: 4;
+  text-align: left;
+  margin-left: 35px;
+}
+
+.game .landscape .clouds {
+  top: -100px;
+}
+
+@media (max-width: 768px) {
+  .game .prompts::before {
+    content: "";
+    display: block;
+    width: 27px;
+    height: 15px;
+    border: 2px solid white;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30px;
+    right: 30%;
+  }
+  .game .prompts::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 9px;
+    border: 2px solid white;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -45px;
+    right: 23%;
+  }
+}
+@media (min-width: 768px) {
+  .game .prompts {
+    width: 35%;
+    left: calc(50% - 35px);
+    transform: translateX(-50%);
+    margin-top: 80px;
+  }
+  .game .prompts .prompt {
+    margin-right: 100%;
+  }
+  .game .prompts .prompt.next {
+    transform: translateX(calc(-200%));
+  }
+  .game .share {
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+/* ===================== SETTINGS ===================== */
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.settings .options {
+  position: relative;
+  z-index: 4;
+  margin: 40px 35px;
+  height: 70%;
+  display: flex;
+}
+
+.settings .options .content {
+  flex: 1 0 100%;
+  border: 2px solid white;
+  border-radius: 34px;
+  padding: 20px;
+  margin-right: 35px;
+  height: 95%;
+  margin-top: auto;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(0%);
+}
+
+.settings .landscape .clouds {
+  top: -100px;
+}
+
+@media (max-width: 768px) {
+  .settings .options::before {
+    content: "";
+    display: block;
+    width: 27px;
+    height: 15px;
+    border: 2px solid white;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30px;
+    right: 30%;
+  }
+  .settings .options::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 9px;
+    border: 2px solid white;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -45px;
+    right: 23%;
+  }
+  .settings .options .content {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) {
+  .settings .options .content {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 72px;
+  }
+}
+
+/* ===================== CHARACTERS ===================== */
+
+.characters #sippy {
+  width: 160px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.characters #sippy svg:not(:first-child) {
+  display: none !important;
+}
+
+.characters.not-home #sippy {
+  width: 85px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  left: initial;
+  bottom: 20px;
+  right: 30px;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .characters .sippy-lg,
+  .characters .cheesy-lg {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .characters #sippy {
+    display: none;
+  }
+  .characters .sippy-lg {
+    position: absolute;
+    z-index: 3;
+    left: 30px;
+    bottom: 25px;
+  }
+  .characters .cheesy-lg {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: -100px;
+  }
+}
+
+/* ===================== LANDSCAPE ===================== */
+
 .landscape {
   position: absolute;
   bottom: 0;
@@ -188,147 +490,7 @@ p {
   border-radius: 50%;
 }
 
-.home,
-.game,
-.settings {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.home .content {
-  position: relative;
-  z-index: 4;
-  margin-top: 50px;
-  padding: 0 35px;
-}
-
-.home .title {
-  margin-bottom: 20px;
-  max-width: 570px;
-}
-
-.home p {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.home .play {
-  margin-top: 30px;
-}
-
-.home .play a {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home .share {
-  margin-top: 30px;
-  justify-content: center;
-}
-
-.home .landscape .clouds {
-  top: -75px;
-}
-
-.home .landscape .city img {
-  animation: slide-city 50s linear infinite;
-}
-
-.home #sippy {
-  width: 160px;
-  margin: 0 auto;
-  position: absolute;
-  z-index: 3;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.home #sippy svg:not(:first-child) {
-  display: none !important;
-}
-
-.game .prompts,
-.settings .options {
-  position: relative;
-  z-index: 4;
-  margin: 40px 35px;
-  height: 70%;
-  display: flex;
-}
-
-.game .prompts .prompt,
-.settings .options .content {
-  flex: 1 0 100%;
-  border: 2px solid white;
-  border-radius: 34px;
-  padding: 20px;
-  margin-right: 35px;
-  height: 95%;
-  margin-top: auto;
-  background-color: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(0%);
-}
-
-.game .prompts .prompt.next {
-  transform: translateX(calc(-100% - 35px));
-  transition: all 0.5s ease;
-}
-
-.game .prompts p {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  margin-top: auto;
-}
-
-.game .prompts .prompt button {
-  margin-top: auto;
-  margin-bottom: 20px;
-}
-
-.game .share {
-  position: relative;
-  z-index: 4;
-  text-align: left;
-  margin-left: 35px;
-}
-
-.game .landscape .clouds,
-.settings .landscape .clouds {
-  top: -100px;
-}
-
-.game #sippy,
-.settings #sippy {
-  width: 85px;
-  margin: 0 auto;
-  position: absolute;
-  z-index: 3;
-  bottom: 20px;
-  right: 30px;
-}
-
-@keyframes slide-clouds {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-200%, 0, 0); /* The image width */
-  }
-}
-
 @media (max-width: 768px) {
-  .sippy-lg,
-  .cheesy-lg {
-    display: none;
-  }
-
   .landscape .ground::after {
     width: 165px;
     height: 30px;
@@ -336,7 +498,6 @@ p {
     top: 50%;
     transform: translate(-50%, -50%);
   }
-
   .landscape.not-home .ground::after {
     width: 95px;
     height: 20px;
@@ -345,135 +506,30 @@ p {
     top: 50%;
     transform: none;
   }
-
-  .game .prompts::before,
-  .settings .options::before {
-    content: "";
-    display: block;
-    width: 27px;
-    height: 15px;
-    border: 2px solid white;
-    background: black;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -30px;
-    right: 30%;
-  }
-
-  .game .prompts::after,
-  .settings .options::after {
-    content: "";
-    display: block;
-    width: 17px;
-    height: 9px;
-    border: 2px solid white;
-    background: black;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -45px;
-    right: 23%;
-  }
-
-  @keyframes slide-city {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-    100% {
-      transform: translate3d(-50%, 0, 0); /* The image width */
-    }
-  }
 }
-
 @media (min-width: 768px) {
   .landscape .clouds {
     top: -165% !important;
   }
-
   .landscape .clouds .c-wrap {
     animation: slide-clouds 35s linear infinite;
     height: 300px;
   }
-
   .landscape .clouds .cloud {
     width: 200px;
   }
-
   .landscape .city img {
     width: 200%;
   }
-
   .landscape .ground::after {
     width: 222px !important;
     height: 44px !important;
     left: 44px !important;
     bottom: 8px !important;
   }
-
-  .primary-btn {
-    color: white;
-    background: black;
-  }
-
-  .primary-btn:hover {
-    color: black;
-    background: white;
-  }
-
-  .primary-btn:active {
-    color: black;
-  }
-
-  #sippy {
-    display: none;
-  }
-
-  .sippy-lg {
-    position: absolute;
-    z-index: 3;
-    left: 30px;
-    bottom: 25px;
-  }
-
-  .cheesy-lg {
-    position: absolute;
-    z-index: 3;
-    right: 0;
-    bottom: -100px;
-  }
-
-  .home p {
-    font-size: 24px;
-  }
-
-  .game .prompts {
-    width: 35%;
-    left: calc(50% - 35px);
-    transform: translateX(-50%);
-    margin-top: 80px;
-  }
-
-  .game .prompts .prompt {
-    margin-right: 100%;
-  }
-
-  .game .prompts .prompt.next {
-    transform: translateX(calc(-200%));
-  }
-
-  .game .share {
-    text-align: center;
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  .settings .options .content {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
-/* DISCLAIMER */
+/* ===================== DISCLAIMER ===================== */
 
 .disclaimer {
   position: fixed;
@@ -528,5 +584,26 @@ p {
   .disclaimer .content .primary-btn:hover {
     color: white;
     background: black;
+  }
+}
+
+/* ===================== KEYFRAMES ===================== */
+
+@keyframes slide-clouds {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-200%, 0, 0);
+  }
+}
+@media (max-width: 768px) {
+  @keyframes slide-city {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
   }
 }

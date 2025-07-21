@@ -5,6 +5,7 @@ import Settings from "./screens/Settings";
 import Disclaimer from "./components/Disclaimer";
 import TopNav from "./components/TopNav";
 import Landscape from "./components/Landscape";
+import Characters from "./components/Characters";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path="/settings" element={<Settings />} />
       </Routes>
 
+      <Characters />
       <Landscape />
     </div>
   );

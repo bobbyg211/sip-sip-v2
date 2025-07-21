@@ -1,8 +1,4 @@
 import { useState } from "react";
-import cityscape from "../images/City.svg";
-import cloud from "../images/Cloud.svg";
-import sippyLg from "../images/sippy-lg.svg";
-import cheesyLg from "../images/cheesy-lg.svg";
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;
@@ -35,24 +31,6 @@ export default function Settings() {
             </label>
           </div>
         </div>
-      </div>
-
-      <div className="landscape">
-        <div className="clouds">
-          <div className="c-wrap">
-            <img className="cloud cloud-1" src={cloud} alt="" />
-            <img className="cloud cloud-2" src={cloud} alt="" />
-            <img className="cloud cloud-3" src={cloud} alt="" />
-            <img className="cloud cloud-4" src={cloud} alt="" />
-          </div>
-        </div>
-        <div className="city">
-          <img src={cityscape} alt="" />
-        </div>
-        <div className="ground"></div>
-        <img src={cheesyLg} alt="Sippy" id="sippy" />
-        <img className="sippy-lg" src={sippyLg} alt="" />
-        <img className="cheesy-lg" src={cheesyLg} alt="" />
       </div>
     </div>
   );

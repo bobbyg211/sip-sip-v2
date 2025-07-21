@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import lottie from "lottie-web";
-import * as canman from "../animations/canman.json";
+import canman from "../animations/canman.json";
 import logo from "../images/logo.svg";
 import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";

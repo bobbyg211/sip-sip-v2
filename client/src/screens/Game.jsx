@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useGetPrompt from "../hooks/useGetPrompt";
+// import useGetPrompt from "../hooks/useGetPrompt";
 import cityscape from "../images/City.svg";
 import cloud from "../images/Cloud.svg";
 import sippy from "../images/sippy.svg";
@@ -8,7 +8,7 @@ import sippyLg from "../images/sippy-lg.svg";
 import cheesyLg from "../images/cheesy-lg.svg";
 
 export default function Game() {
-  const { action: getPrompts, data: prompts } = useGetPrompt();
+  // const { action: getPrompts, data: prompts } = useGetPrompt();
   const [currPrompt, setCurrPrompt] = useState();
   const [nextPrompt, setNextPrompt] = useState();
 

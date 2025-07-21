@@ -342,6 +342,40 @@ p {
   }
 }
 
+/* ===================== TOP NAV ===================== */
+
+.top-nav {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.top-nav .global-home,
+.top-nav .global-back {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+}
+
+.top-nav .global-settings {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.top-nav .nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-nav .nav-icon {
+  width: 32px;
+  height: 32px;
+}
+
 /* ===================== CHARACTERS ===================== */
 
 .characters #sippy {

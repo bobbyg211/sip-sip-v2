@@ -3,8 +3,7 @@ import { Link } from "react-router";
 import lottie from "lottie-web";
 import canman from "../animations/canman.json";
 import logo from "../images/logo.svg";
-import cityscape from "../images/City.svg";
-import cloud from "../images/Cloud.svg";
+
 import share from "../images/share.svg";
 import sippyLg from "../images/sippy-lg.svg";
 import cheesyLg from "../images/cheesy-lg.svg";
@@ -46,19 +45,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="landscape">
-        <div className="clouds">
-          <div className="c-wrap">
-            <img className="cloud cloud-1" src={cloud} alt="" />
-            <img className="cloud cloud-2" src={cloud} alt="" />
-            <img className="cloud cloud-3" src={cloud} alt="" />
-            <img className="cloud cloud-4" src={cloud} alt="" />
-          </div>
-        </div>
-        <div className="city">
-          <img src={cityscape} alt="" />
-        </div>
-        <div className="ground"></div>
+      <div className="characters">
         <div id="sippy"></div>
         <img className="sippy-lg" src={sippyLg} alt="" />
         <img className="cheesy-lg" src={cheesyLg} alt="" />

@@ -352,6 +352,7 @@ p {
     width: 27px;
     height: 15px;
     border: 2px solid white;
+    background: black;
     border-radius: 50%;
     position: absolute;
     bottom: -30px;
@@ -365,6 +366,7 @@ p {
     width: 17px;
     height: 9px;
     border: 2px solid white;
+    background: black;
     border-radius: 50%;
     position: absolute;
     bottom: -45px;
